@@ -56,6 +56,25 @@ const API = {
                 })
            
         return success
+    },
+
+    addProduct: async (formData: FormData) => {
+
+        var success = false
+
+        await fetch(ApiBase + "/saveproduct",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    success = data.success
+                    console.log(success)
+                })
+           
+        return success
     }
 
 }

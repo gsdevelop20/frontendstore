@@ -46,6 +46,7 @@ export function Header() {
                                         <ul className="dropdown-menu absolute hidden text-gray-700 pt-1 w-40 right-0">
                                             <li className=""><Link to={''} className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >{name.userName}</Link></li>
                                             <li className=""><a className="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
+                                            <li className=""><Link to={'/addproduct'} className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Vender</Link></li>
                                             <li className=""><a className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" onClick={exit} href="#">Sair</a></li>
                                         </ul>
                                     ):(
