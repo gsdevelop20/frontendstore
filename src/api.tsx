@@ -1,9 +1,8 @@
 
 const ApiBase = 'http://127.0.0.1:8000/api'
 
-interface Formdataprops{
-    email? : string,
-    password?: string 
+interface produxtidprops{
+    id? : string,
 }
 
 const API = {
@@ -75,6 +74,21 @@ const API = {
                 })
            
         return success
+    },
+
+    get_roduct: async (id:string) => {
+
+        await fetch(ApiBase + "/product/"+id,{
+            method:'GET',
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    return data
+                })
+           
+        return []
     }
 
 }
