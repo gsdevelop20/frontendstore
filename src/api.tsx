@@ -5,6 +5,15 @@ interface produxtidprops{
     id? : string,
 }
 
+interface commentprops {
+    Comment: string,
+    ReviewID: string,
+    UserID: string,
+    ProductID: string,
+    Rating: string,
+    ReviewDate: string
+}
+
 const API = {
 
     verifylogin: async (email: string, password: string) => {
@@ -89,7 +98,41 @@ const API = {
                 })
            
         return []
-    }
+    },
+
+    saveComment: async (formData: FormData) => {
+
+        var success = false
+
+        await fetch(ApiBase + "/saveComment",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    success = data.success
+                })
+           
+        return success
+    },
+    getAllComment: async () => {
+
+        await fetch(ApiBase + "/getAllComment",{
+            method:'GET',
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then((data: commentprops[]) =>{
+                    console.log(data)
+                    return data
+                })
+           
+        return []
+    },
+
 
 }
 
