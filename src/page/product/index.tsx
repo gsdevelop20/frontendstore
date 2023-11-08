@@ -193,11 +193,11 @@ export function Product() {
 
                 </div>
                 <div className='bg-white shadow-2xl mx-auto w-[84%] rounded mb-5'>
-                    <h2 className='p-10' >
+                    <h2 className='p-8 ml-4' >
                         Comentários
                     </h2>
 
-                    <div className='w-[84%] mx-auto rounded'>
+                    <div className='w-[84%] mx-auto rounded p-5'>
 
                         <form className='mb-4' onSubmit={saveComment}>
                             <label className="mb-2 text-sm font-medium  sr-only dark:text-white">Search</label>
