@@ -133,6 +133,47 @@ const API = {
         return []
     },
 
+    deleteComment: async (id:string) =>{
+
+        var success = false
+
+        const formData = new FormData()
+        formData.append('commentid', id)
+        
+        await fetch(ApiBase + "/DeleteComment",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    console.log(data)
+                    success = data.success
+                })
+           
+        return success
+
+    },
+
+    editComment: async (formData: FormData) => {
+
+        var success = false
+
+        await fetch(ApiBase + "/editComment",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    success = data.success
+                })
+           
+        return success
+    },
+
 
 }
 

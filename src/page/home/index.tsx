@@ -44,11 +44,11 @@ export function Home() {
 
         <main className="">
             <Slider />
-            <div className="container shadow-2xl rounded mx-auto max-w-6xl mt-[150px] p-10 flex flex-wrap mb-10 justify-evenly  bg-white">
+            <div className="container shadow-2xl rounded mx-auto max-w-6xl gap-5 mt-[150px] p-10 flex flex-wrap mb-10 justify-evenly bg-white">
                 {datac.map((item) => (
 
                     <div className="flex flex-wrap justify-evenly shadow-2xl w-[25%]">
-                        <div className="flex flex-col  align-baseline   w-[97%] rounded overflow-hidden flex-row justify-between mb-">
+                        <div className="flex flex-col  align-baseline   w-[97%] rounded overflow-hidden justify-between mb-">
                             <Link to={'/product/' + item.ProductID}>
                                 <img
                                     className="rounded-t-lg w-52 mx-auto"
@@ -66,7 +66,6 @@ export function Home() {
                                     <i className="items-end "><FiShoppingCart /></i>
                                 </div>
                             </div>
-
 
                         </div>
 
