@@ -5,6 +5,8 @@ import { Login } from "./page/login";
 import { Register } from "./page/register";
 import { AddProduct } from "./page/addProduct";
 import { Product } from "./page/product";
+import { Myproducts } from "./page/myproducts";
+import { EditProduct } from "./page/editProduct";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
             {
                 path: "/product/:productid",
                 element: <Product/>
+            },
+            {
+                path: "/myProducts",
+                element: <Myproducts/>
+            },
+            {
+                path: "/editProduct/:productid",
+                element: <EditProduct/>
             },
         ],
                 

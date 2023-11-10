@@ -33,9 +33,9 @@ export function AddProduct() {
 
     return (
         <>
-            <section className=" dark:bg-gray-900 mt-60 mb-40">
+            <section className=" mt-60 mb-40">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                    <h1 className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                    <h1 className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                         Adicionar Produto
                     </h1>
                     <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -46,12 +46,12 @@ export function AddProduct() {
                             <form className="space-y-4 md:space-y-6" onSubmit={saveProduct} action="#">
 
                                 <div>
-                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagem do produto</label>
+                                    <label  className="block mb-2 text-sm font-medium  dark:text-white">Imagem do produto</label>
                                     <input 
                                         type="file" 
                                         name="productImg" 
                                         id="productImg" 
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-blue-600 dark:border-blue-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Gabriel" 
+                                        className="bg-gray-50 border border-gray-300 dark:bg-gray-700 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Gabriel" 
                                         required
                                         onChange={(e) => setProductImg(e.target.files?.[0])}
                                     />
@@ -63,7 +63,7 @@ export function AddProduct() {
                                         type="text" 
                                         name="productname" 
                                         id="productname" 
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-blue-600 dark:border-blue-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        className="bg-gray-50 border border-gray-300 text-white-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         required
                                         value={productName}
                                         onChange={(e) => setProductName(e.target.value)}
@@ -74,7 +74,7 @@ export function AddProduct() {
                                     <textarea 
                                         name="description" 
                                         id="description" 
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-blue-600 dark:border-blue-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
 
@@ -91,7 +91,7 @@ export function AddProduct() {
                                         min="0"
                                         max="99999.999" 
                                         step="0.10" 
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-blue-600 dark:border-blue-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" 
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Preço" 
                                         required
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}

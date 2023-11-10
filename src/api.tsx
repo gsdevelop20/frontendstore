@@ -85,6 +85,25 @@ const API = {
         return success
     },
 
+    editProduct: async (formData: FormData) => {
+
+        var success = false
+
+        await fetch(ApiBase + "/editproduct",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    success = data.success
+                    console.log(success)
+                })
+           
+        return success
+    },
+
     get_roduct: async (id:string) => {
 
         await fetch(ApiBase + "/product/"+id,{
@@ -154,6 +173,28 @@ const API = {
            
         return success
 
+    },
+
+    deleteProduct: async (id:string) =>{
+
+        var success = false
+
+        const formData = new FormData()
+        formData.append('productid', id)
+        
+        await fetch(ApiBase + "/DeleteProduct",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    console.log(data)
+                    success = data.success
+                })
+           
+        return success
     },
 
     editComment: async (formData: FormData) => {
