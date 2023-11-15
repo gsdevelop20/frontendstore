@@ -48,13 +48,16 @@ export function Home() {
                 {datac.map((item) => (
 
                     <div className="flex flex-wrap justify-evenly shadow-2xl w-[270px]">
-                        <div className="flex flex-col  align-baseline   w-[97%] rounded overflow-hidden justify-between mb-">
+                        <div className="flex flex-col  align-baseline  w-[97%] rounded overflow-hidden justify-between mb-">
                             <Link to={'/product/' + item.ProductID}>
+                                <div className=" ">
                                 <img
-                                    className="rounded-t-lg w-52 mx-auto"
+                                    className="rounded-t-lg  mx-auto"
                                     src={item.url}
+                                    width={200}
                                     alt=""
                                 />
+                                </div>
                             </Link>
                             <div className="px-6 py-4 info">
                                 <div className="font-bold text-xl max-w-xl mb-"><p className=" break-words name text-ellipsis">{item.ProductName}</p></div>

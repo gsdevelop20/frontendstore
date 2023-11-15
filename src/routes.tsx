@@ -7,6 +7,8 @@ import { AddProduct } from "./page/addProduct";
 import { Product } from "./page/product";
 import { Myproducts } from "./page/myproducts";
 import { EditProduct } from "./page/editProduct";
+import { Checkout } from "./page/checkout";
+import { Myorders } from "./page/myOrders";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
             {
                 path: "/editProduct/:productid",
                 element: <EditProduct/>
+            },
+            {
+                path: "/checkout/:productid",
+                element: <Checkout/>
+            },
+            {
+                path: "/myorders",
+                element: <Myorders/>
             },
         ],
                 

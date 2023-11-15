@@ -1,4 +1,4 @@
-import { json, useParams } from 'react-router-dom'
+import { json, useParams, Link } from 'react-router-dom'
 import { FaUserCircle } from "react-icons/fa";
 import { BsTrash } from "react-icons/bs";
 import { AiOutlineEdit } from "react-icons/ai";
@@ -183,7 +183,7 @@ export function Product() {
 
                                 </div>
                                 <div className='w-[70%]'>
-                                    <button type="button" className=" w-[100%] focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Comprar</button>
+                                    <Link to={'/checkout/'+item.ProductID}><button type="button" className=" w-[100%] focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Comprar</button></Link>
                                 </div>
 
                             </div>

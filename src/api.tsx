@@ -14,6 +14,18 @@ interface commentprops {
     ReviewDate: string
 }
 
+interface dataprops {
+    ProductID: string,
+    SellerID: string,
+    ProductName: string,
+    Description: string,
+    Price: string,
+    StockQuantity: string,
+    Category: string,
+    url: string
+}
+
+
 const API = {
 
     verifylogin: async (email: string, password: string) => {
@@ -215,6 +227,23 @@ const API = {
         return success
     },
 
+    createOrder: async (formData: FormData) => {
+
+        var success
+
+        await fetch(ApiBase + "/createOrder",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    success = data
+                })
+           
+        return success
+    },
 
 }
 
