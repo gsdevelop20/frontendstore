@@ -209,6 +209,30 @@ const API = {
         return success
     },
 
+    deleteOrder: async (id:string, id2: string) =>{
+
+        var success = false
+
+        const formData = new FormData()
+        formData.append('orderid', id)
+        formData.append('orderitemid', id2)
+
+        
+        await fetch(ApiBase + "/Deleteorder",{
+            method:'POST',
+            body: formData
+        })
+        .then(response =>{
+            return response.json();
+                })
+                .then(data =>{
+                    console.log(data)
+                    success = data.success
+                })
+           
+        return success
+    },
+
     editComment: async (formData: FormData) => {
 
         var success = false
