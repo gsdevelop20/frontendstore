@@ -131,12 +131,12 @@ export function Checkout() {
 
     return (
         <>
-            <main className='p-10'>
+            <main className='p-5'>
                 <h1 className={payment.length !== 0 ? 'hidden' :'text-center mt-36 font-bold'}>Informe os dados para a finalização da compra</h1>
 
                 <div className='container mx-auto mt-20  bg-white p-10 rounded-2xl flex flex-wrap justify-around  mt-7 gap-7 items-center'>
                     <div className={payment.length !== 0 ? 'hidden' : 'w-[100%] flex flex-wrap justify-around items-center'}  >
-                        <div className='mx-auto'>
+                        <div className='mx-auto mb-10 '>
                             <img src={pimg} width={250} alt="" />
                             <h1 className='text-center text-2xl font-bold'>Preço Total:<br /><span className='font-bold text-green-600  '>R$: {subTotal}</span></h1>
                         </div>
@@ -146,7 +146,7 @@ export function Checkout() {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                         Primeiro Nome
                                     </label>
-                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         id="grid-first-name"
                                         type="text"
                                         value={firstName}
