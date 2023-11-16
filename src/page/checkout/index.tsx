@@ -49,6 +49,7 @@ export function Checkout() {
     const [qrcode_img, setqrcode_img] = useState('')
     const [pimg, setpimg] = useState('')
     const [pname, setpname] = useState('')
+    const [stock, setStock] = useState('')
 
     useEffect(() => {
 
@@ -60,6 +61,7 @@ export function Checkout() {
                     setsubtotal(data[0].Price)
                     setpimg(data[0].url)
                     setpname(data[0].ProductName)
+                    setStock(data[0].StockQuantity)
                 })
 
                 .catch((err) => {
@@ -98,6 +100,7 @@ export function Checkout() {
         formData.append('productid', productid ?? '0')
         formData.append('quantity', quantity)
         formData.append('subtotal', subTotal)
+        formData.append('stock', stock)
 
         await fetch("http://127.0.0.1:8000/api/createOrder", {
             method: 'POST',
@@ -129,9 +132,9 @@ export function Checkout() {
     return (
         <>
             <main className='p-10'>
-                <h1 className='text-center mt-36 font-bold'>Informe os dados para a finalização da compra</h1>
+                <h1 className={payment.length !== 0 ? 'hidden' :'text-center mt-36 font-bold'}>Informe os dados para a finalização da compra</h1>
 
-                <div className='container mx-auto bg-white p-10 rounded-2xl flex flex-wrap justify-around  mt-7 gap-7 items-center'>
+                <div className='container mx-auto mt-20  bg-white p-10 rounded-2xl flex flex-wrap justify-around  mt-7 gap-7 items-center'>
                     <div className={payment.length !== 0 ? 'hidden' : 'w-[100%] flex flex-wrap justify-around items-center'}  >
                         <div className='mx-auto'>
                             <img src={pimg} width={250} alt="" />
@@ -205,6 +208,7 @@ export function Checkout() {
                                         type="number"
                                         value={quantity}
                                         min={1}
+                                        max={stock}
                                         placeholder="Quantidade"
                                         onChange={(e) => setQuantity(e.target.value)}
 

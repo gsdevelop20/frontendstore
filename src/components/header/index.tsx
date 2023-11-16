@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { Link, useActionData, useNavigate } from 'react-router-dom'
 
 export function Header() {
+    const navigate = useNavigate()
     const [name, setname] = useState({
         userName: '',
         isLogin: false
@@ -26,6 +27,7 @@ export function Header() {
             userName: '',
             isLogin: false
         })
+        navigate('/')
     }
 
     return (

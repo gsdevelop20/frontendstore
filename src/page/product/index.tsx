@@ -1,4 +1,4 @@
-import { json, useParams, Link } from 'react-router-dom'
+import { json, useParams, Link, redirect } from 'react-router-dom'
 import { FaUserCircle } from "react-icons/fa";
 import { BsTrash } from "react-icons/bs";
 import { AiOutlineEdit } from "react-icons/ai";
@@ -163,28 +163,42 @@ export function Product() {
             <main className=''>
                 <div className="w-100 flex justify-center">
                     {product.map((item) => (
-                        <div className="container gap-3  xl:mx-auo h-100 max-w-[90%] mt-[150px] flex max-xl:flex-wrap p-10 mb-10">
-                            <div className='rounded justify-center h-auto flex gap-2 flex-wrap w-[100%] mx-auto shadow-2xl bg-white'>
+                        <div className="container gap-3  xl:mx-auo h-100 max-w-[96%] mt-[150px] flex max-xl:flex-wrap p-4 mb-10">
+
+                            <div className='rounded justify-center h-auto flex flex-col gap-2 flex-wrap  w-[100%] mx-auto shadow-2xl bg-white'>
+
                                 <div>
-                                    <img className='object-contain aspect-square  max-w-sm w-80  ' src={item.url} alt="" />
+                                    <img className='object-contain aspect-square mx-auto max-w-sm ' width={230} src={item.url} alt="" />
                                 </div>
                                 <div className='flex flex-col gap-8 mt-10 p-10 mb-10'>
-                                    <h1 className='relativ top-10 text-1xl font-bold'>
+                                    <h1 className='relativ top-10 text-1xl text-center font-bold'>
                                         {item.ProductName}
                                     </h1>
-                                    <p className='sm:relativ top-20 '>
+                                    <p className='sm:relativ text-center top-20 '>
                                         {item.Description}
                                     </p>
                                 </div>
                             </div>
-                            <div className='rounded container gap-7 max-xl:w-[100%] w-[60%] h-100 justify-between flex-col  items-center flex  mx-auto shadow-2xl bg-white'>
+                            <div className='rounded container gap-7 max-xl:w-[100%] w-[60%] h-[300px] justify-between flex-col  items-center flex  mx-auto shadow-2xl bg-white'>
                                 <div className='text-4xl font-bold max-2xl:mt-10'>
                                     <h1>R$ {item.Price} </h1>
+                                </div>
+                                <div>
+                                    <h1>Estoque: <span className='font-bold  '>{item.StockQuantity}</span></h1>
+                                </div>
+                                {item.StockQuantity == '0'?(
+                                    <div className='w-[70%]'>
+                                    <Link to={userid ? '/checkout/' + item.ProductID : '/login'}><button type="button" disabled className=" w-[100%] opacity-50  focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Comprar</button></Link>
+                                </div>
 
+                                ):(
+
+                                    <div className='w-[70%]'>
+                                    <Link to={userid ? '/checkout/' + item.ProductID : '/login'}><button type="button" className=" w-[100%] focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Comprar</button></Link>
                                 </div>
-                                <div className='w-[70%]'>
-                                    <Link to={'/checkout/'+item.ProductID}><button type="button" className=" w-[100%] focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Comprar</button></Link>
-                                </div>
+
+                                )}
+                                
 
                             </div>
 
@@ -192,7 +206,7 @@ export function Product() {
                     ))}
 
                 </div>
-                <div className='bg-white shadow-2xl mx-auto w-[84%] rounded mb-5'>
+                <div className='bg-white shadow-2xl mx-auto w-[94%] rounded mb-5'>
                     <h2 className='p-8 ml-4' >
                         Comentários
                     </h2>
