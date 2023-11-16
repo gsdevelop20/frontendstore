@@ -89,7 +89,7 @@ export function Myorders() {
                     
                     <div  className="flex p-10 flex-col shadow-2xl  items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border dark:bg-white ">
                     <div>
-                    <BsTrash className='relative bottom-36 right-5 text-red-600 cursor-pointer   ' onClick={() => openModal(item.OrderID, item.OrderItemID)}/>
+                    <BsTrash className='relative bottom-24   right-5 text-red-600 cursor-pointer   ' onClick={() => openModal(item.OrderID, item.OrderItemID)}/>
                     </div>
                         <img className=" md:rounded-none md:rounded-s-lg" src={item.productimg} alt="" width={150}/>
                         
