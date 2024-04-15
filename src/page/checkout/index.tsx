@@ -34,7 +34,6 @@ interface paymentprops {
 }
 
 export function Checkout() {
-
     const { productid } = useParams()
     let userid = localStorage.getItem("userid") ?? ''
     const [product, setProduct] = useState<dataprops[]>([])
@@ -52,7 +51,6 @@ export function Checkout() {
     const [stock, setStock] = useState('')
 
     useEffect(() => {
-
         async function getData() {
             await fetch('http://127.0.0.1:8000/api/product/' + productid)
                 .then(Response => Response.json())
@@ -79,7 +77,6 @@ export function Checkout() {
                     setaddress(data[0].address)
                     setEmail(data[0].email)
                 })
-
                 .catch((err) => {
                     console.log(err)
                 })
@@ -87,7 +84,6 @@ export function Checkout() {
 
         getData()
         getUser()
-
     }, [])
 
     const createOrder = async (e: FormEvent) => {
@@ -105,14 +101,12 @@ export function Checkout() {
         await fetch("http://127.0.0.1:8000/api/createOrder", {
             method: 'POST',
             body: formData
-        })
-            .then(Response => Response.json())
+        }).then(Response => Response.json())
             .then((data: paymentprops[]) => {
                 setpayment(data)
                 setqrcode_img(data[0].qrcode_img)
                 console.log(data)
             })
-
             .catch((err) => {
                 console.log(err)
             })
@@ -128,13 +122,11 @@ export function Checkout() {
     var q = document.getElementById('grid-q')
     q?.addEventListener('change', subtotal)
 
-
     return (
         <>
             <main className='p-5'>
                 <h1 className={payment.length !== 0 ? 'hidden' :'text-center mt-36 font-bold'}>Informe os dados para a finalização da compra</h1>
-
-                <div className='container mx-auto mt-20  bg-white p-10 rounded-2xl flex flex-wrap justify-around  mt-7 gap-7 items-center'>
+                <div className='container mx-auto mt-[80px] bg-white p-10 rounded-2xl flex flex-wrap justify-around  mt-7 gap-7 items-center' >
                     <div className={payment.length !== 0 ? 'hidden' : 'w-[100%] flex flex-wrap justify-around items-center'}  >
                         <div className='mx-auto mb-10 '>
                             <img src={pimg} width={250} alt="" />
@@ -153,7 +145,6 @@ export function Checkout() {
                                         onChange={(e) => setFirstName(e.target.value)}
                                         placeholder="Jane"
                                     />
-
                                 </div>
                                 <div className="w-full md:w-1/2 px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -180,7 +171,6 @@ export function Checkout() {
                                         onChange={(e) => setaddress(e.target.value)}
                                         placeholder="Rua 911, Bloco B"
                                     />
-
                                 </div>
                             </div>
                             <div className="flex flex-wrap -mx-3 mb-6">
@@ -195,7 +185,6 @@ export function Checkout() {
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="usuario@email.com"
                                     />
-
                                 </div>
                             </div>
                             <div className="flex flex-wrap -mx-3 mb-2">
@@ -211,18 +200,14 @@ export function Checkout() {
                                         max={stock}
                                         placeholder="Quantidade"
                                         onChange={(e) => setQuantity(e.target.value)}
-
                                     />
                                 </div>
-
                             </div>
                             <div className='w-[100%]'>
                                 <button type="submit" className=" w-[100%]  focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Finalizar Compra</button>
                             </div>
                         </form>
-
                     </div>
-
                     <div className={payment.length !== 0 ? '' : 'hidden'}>
                         <h1 className='font-extrabold text-center text-3xl text-blue-500  '>QRCODE <br /> PARA PAGAMENTO</h1>
                     </div>

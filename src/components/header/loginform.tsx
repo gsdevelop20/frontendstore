@@ -1,7 +1,4 @@
-
-
 export function Login() {
-
     return (
         <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
        
@@ -34,6 +31,5 @@ export function Login() {
           </div>
         </div>
       </div>
-    
     )
   }

@@ -1,4 +1,5 @@
 import { json, useParams, Link, redirect } from 'react-router-dom'
+import Styles from './styles.css'
 import { FaUserCircle } from "react-icons/fa";
 import { BsTrash } from "react-icons/bs";
 import { AiOutlineEdit } from "react-icons/ai";
@@ -161,12 +162,10 @@ export function Product() {
     return (
         <>
             <main className=''>
-                <div className="w-100 flex justify-center">
+                <div className="w-100 flex container mx-auto justify-center">
                     {product.map((item) => (
                         <div className="container gap-3  xl:mx-auo h-100 max-w-[96%] mt-[150px] flex max-xl:flex-wrap p-4 mb-10">
-
                             <div className='rounded justify-center h-auto flex flex-col gap-2 flex-wrap  w-[100%] mx-auto shadow-2xl bg-white'>
-
                                 <div>
                                     <img className='object-contain aspect-square mx-auto max-w-sm ' width={230} src={item.url} alt="" />
                                 </div>
@@ -192,29 +191,22 @@ export function Product() {
                                 </div>
 
                                 ):(
-
                                     <div className='w-[70%]'>
                                     <Link to={userid ? '/checkout/' + item.ProductID : '/login'}><button type="button" className=" w-[100%] focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-1 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Comprar</button></Link>
                                 </div>
 
                                 )}
-                                
-
                             </div>
-
                         </div>
                     ))}
-
                 </div>
-                <div className='bg-white shadow-2xl mx-auto w-[94%] rounded mb-5'>
-                    <h2 className='p-8 ml-4' >
+                <div className='bg-white container shadow-2xl w-[65.6%] mx-auto w-100 rounded p-5 mb-5'>
+                    <h2 className='p-1 ml-4' >
                         Comentários
                     </h2>
-
-                    <div className='w-[84%] mx-auto rounded p-5'>
-
+                    <div className='mx-auto rounded p-5'>
                         <form className='mb-4' onSubmit={saveComment}>
-                            <label className="mb-2 text-sm font-medium  sr-only dark:text-white">Search</label>
+                            <label className="mb-2 text-sm font-medium sr-only dark:text-white">Search</label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 </div>
@@ -229,7 +221,6 @@ export function Product() {
                                 <button id='send' type="submit" className=" text-white absolute right-2.5 bottom-2.5 bg-green-700 focus :ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2">Enviar</button>
                             </div>
                         </form>
-
                         {allcomment.map((item) => (
                             <div className='p-7 flex justify-between border-b-4 mb-5'>
                                 <div className='flex'>
@@ -252,8 +243,6 @@ export function Product() {
 
                                     ) : ('')
                                 }
-
-
                                 <Modal
                                     isOpen={modalIsOpen}
                                     onRequestClose={closeModal}
@@ -262,7 +251,6 @@ export function Product() {
                                     id={item.ReviewID}
                                 >
                                     <h2 className='mb-4' >Editar comentário</h2>
-
 
                                     <form onSubmit={editCommentt}>
                                         <div className="relative">
@@ -281,7 +269,6 @@ export function Product() {
 
                                     </form>
                                 </Modal>
-
                                 <Modal
                                     isOpen={modalIsOpen2}
                                     onRequestClose={closeModal2}
@@ -296,17 +283,11 @@ export function Product() {
                                         <button onClick={() => deletComment(EditCommentId)} className=" ml-3 text-white  right-2.5 bottom-2.5 bg-green-700 focus :ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2">Sim</button>
                                     </div>
                                 </Modal>
-
-
                             </div>
                         ))}
-
                     </div>
-
                 </div>
             </main>
-
         </>
-
     )
 }

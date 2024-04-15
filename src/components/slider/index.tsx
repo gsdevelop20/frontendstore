@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import './slider.css'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
@@ -18,9 +19,7 @@ export function Slider() {
       }}  
       modules={[Navigation, Pagination, Autoplay]}
       className="mySwiper w-full mt-[70px]">
-        <SwiperSlide><img className='w-full h-52' src="https://http2.mlstatic.com/D_NQ_603826-MLA71457796186_092023-OO.webp" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='w-full h-52' src="https://http2.mlstatic.com/D_NQ_961539-MLA71457505297_092023-OO.webp" alt="" /></SwiperSlide>
-        <SwiperSlide><img className='w-full h-52' src="https://http2.mlstatic.com/D_NQ_724172-MLA71550485047_092023-OO.webp" alt="" /></SwiperSlide>
+        <SwiperSlide  className='img'><img className='w-full img' src="https://http2.mlstatic.com/D_NQ_961539-MLA71457505297_092023-OO.webp" alt="" /></SwiperSlide>
       </Swiper>
     </>
     )

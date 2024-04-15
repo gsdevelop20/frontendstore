@@ -33,48 +33,44 @@ export function AddProduct() {
 
     return (
         <>
-            <section className=" mt-60 mb-40">
-                <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                    <h1 className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
-                        Adicionar Produto
-                    </h1>
-                    <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <section className="mt-40 mb-5">
+                <div className="flex flex-col container items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                    <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0  w-100 xl:p-0">
+                        <div className="p-6 space-y-4 md:space-y-6 sm:-">
+                            <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-black">
                                 Informações do Produto
                             </h1>
                             <form className="space-y-4 md:space-y-6" onSubmit={saveProduct} action="#">
-
                                 <div>
-                                    <label  className="block mb-2 text-sm font-medium  dark:text-white">Imagem do produto</label>
+                                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Imagem do produto</label>
                                     <input 
                                         type="file" 
                                         name="productImg" 
                                         id="productImg" 
-                                        className="bg-gray-50 border border-gray-300 dark:bg-gray-700 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Gabriel" 
+                                        className="block p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Gabriel" 
                                         required
                                         onChange={(e) => setProductImg(e.target.files?.[0])}
                                     />
                                 </div>
 
                                 <div>
-                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do produto</label>
+                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Nome do produto</label>
                                     <input 
                                         type="text" 
                                         name="productname" 
                                         id="productname" 
-                                        className="bg-gray-50 border border-gray-300 text-white-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        className="bg-gray-50 border border-gray-300 text-white-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         required
                                         value={productName}
                                         onChange={(e) => setProductName(e.target.value)}
                                     />
                                 </div>
                                 <div>
-                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descrição</label>
+                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Descrição</label>
                                     <textarea 
                                         name="description" 
                                         id="description" 
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  
+                                        className="bg-gray-50 border border-gray-300 text-white-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"  
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
 
@@ -83,7 +79,7 @@ export function AddProduct() {
                                 </div>
 
                                 <div>
-                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Preço</label>
+                                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Preço</label>
                                     <input 
                                         type="number" 
                                         name="price" 
@@ -91,18 +87,18 @@ export function AddProduct() {
                                         min="0"
                                         max="99999.999" 
                                         step="0.10" 
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Preço" 
+                                        className="bg-gray-50 border border-gray-300 text-white-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Preço" 
                                         required
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}
                                     />
                                 </div>
                                 <div>
-                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoria do produto</label>
+                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Categoria do produto</label>
                                     <select 
                                         name="category" 
                                         id="category" 
-                                        className="bg-gray-50 border border-gray-300 text-blue-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                        className="bg-gray-50 border border-gray-300 text-white-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" 
                                         required
                                         value={category}
                                         onChange={(e) => setCategory(e.target.value)}
@@ -112,21 +108,20 @@ export function AddProduct() {
                                     </select>
                                 </div>
                                 <div>
-                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantidade em Estoque</label>
+                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Quantidade em Estoque</label>
                                     <input 
                                         type="number" 
                                         name="quantstock" 
                                         id="quantstock"
                                         placeholder="0" 
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                        className="bg-gray-50 border text-black border-gray-300 text-white-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-900 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" 
                                         required
                                         value={stock}
                                         onChange={(e) => setStock(e.target.value)}
                                     />
                                 </div>
                                 
-                                <button type="submit" className="w-full text-white bg-cyan-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Adicionar Produto</button>
-                        
+                                <button type="submit" className="w-full text-white bg-gray-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Adicionar Produto</button>
                             </form>
                         </div>
                     </div>

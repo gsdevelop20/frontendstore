@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import API from '../../api'
 
 export function Login() {
-
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
@@ -17,8 +16,8 @@ export function Login() {
             navigate('/')
             return
         }
+        
         navigate('/login')
-
     }
 
     return (
