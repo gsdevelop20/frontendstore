@@ -116,6 +116,10 @@ const API = {
         return await fetch('http://127.0.0.1:8000/api/getProductByName/' + name)
     },
 
+    seleReport: async (userid: String) => {
+        return await fetch(ApiBase + '/sales_report/' + userid);
+    },
+
     get_roduct: async (id: string) => {
         await fetch(ApiBase + "/product/" + id, {
             method: 'GET',

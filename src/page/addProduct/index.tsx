@@ -104,7 +104,8 @@ export function AddProduct() {
                                         onChange={(e) => setCategory(e.target.value)}
                                     >
                                         <option value="">Selecione...</option>
-                                        <option value="eletronicos">eletronico</option>
+                                        <option value="Eletrônicos">Eletrônicos</option>
+                                        <option value="Ferramenta">Ferramentas</option>
                                     </select>
                                 </div>
                                 <div>
