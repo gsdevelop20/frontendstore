@@ -30,6 +30,7 @@ interface commentprops {
     ReviewDate: string,
     username: string
 }
+
 const customStyles = {
     content: {
         top: '50%',
@@ -45,8 +46,6 @@ const customStyles = {
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // Define a cor de fundo transparente
     },
 };
-
-
 
 export function Product() {
 

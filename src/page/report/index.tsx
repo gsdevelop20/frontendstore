@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridRowsProp, GridToolbar} from '@mui/x-data-grid';
 import { ptBR } from '@mui/x-data-grid/locales';
 import { useEffect, useState } from "react"
 import API from "../../api";
@@ -10,10 +10,11 @@ interface dataprops {
   productname: string,
   productcategory: string,
   quantity: string,
+  total: string
 }
 
 const StyledBox = styled('div')(({ theme }) => ({
-  height: 300,
+  
   width: '100%',
   '& .MuiDataGrid-cell--editing': {
     backgroundColor: 'rgb(255,215,115, 0.19)',
@@ -51,7 +52,14 @@ export function Report() {
     {
       field: 'salequantity',
       headerName: 'Quantidade de vendas',
-      type: 'string',
+      type: 'number',
+      width: 180,
+      editable: false,
+    },
+    {
+      field: 'total',
+      headerName: 'Total (R$)',
+      type: 'number',
       width: 180,
       editable: false,
     },
@@ -71,6 +79,7 @@ export function Report() {
             productname: item.productname.toUpperCase(),
             productcategory: item.productcategory.toUpperCase(),
             salequantity: item.quantity,
+            total: item.total
           })
         ))
   
@@ -85,7 +94,7 @@ export function Report() {
     <div className='container mx-auto mt-32 bg-white p-10'>
       <h1 className='mb-4 font-bold'>Relatório de vendas</h1>
       <StyledBox>
-        <DataGrid localeText={ptBR.components.MuiDataGrid.defaultProps.localeText} rows={row} columns={columns} editMode="row" />
+        <DataGrid slots={{ toolbar: GridToolbar }} density="comfortable" localeText={ptBR.components.MuiDataGrid.defaultProps.localeText} rows={row} columns={columns} editMode="row" />
       </StyledBox>
     </div>
   );

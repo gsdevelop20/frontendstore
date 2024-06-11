@@ -51,6 +51,7 @@ export function Header() {
                                         <li className=""><Link to={'/addproduct'} className=" bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Vender</Link></li>
                                         <li className=""><Link to={'/myorders'} className=" bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Meus pedidos</Link></li>
                                         <li className=""><Link to={'/report'} className=" bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Relatório de vendas</Link></li>
+                                        <li className=""><Link to={'/order_report'} className=" bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Relatório de pedidos</Link></li>
                                         <li className=""><a className="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" onClick={exit} href="#">Sair</a></li>
                                     </ul>
                                 ) : (
@@ -58,7 +59,6 @@ export function Header() {
                                         <li className=""><Link to={'/login'} className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Login</Link></li>
                                         <li className=""><Link to={'/register'} className="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" >Register</Link></li>
                                     </ul>
-
                                 )}
 
                             </div>

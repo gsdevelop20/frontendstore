@@ -66,7 +66,7 @@ export function Home() {
                             placeholder="Pesquisar" />
                         <label className={`absolute left-0 -top-3.5 ${localStorage.getItem('error') ? "text-red-600" : "text-gray-600"} text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-sm`}>Pesquisar</label>
                     </div>
-                    <div className="container shadow-2xlrounded w-full max-w-6xl gap-5 mt-[150px] p-10 flex flex-wrap mb-10 justify-evenly bg-white">
+                    <div className="container shadow-2xlrounded w-full max-w-6xl gap-5 mt-[150px] p-3 flex flex-wrap mb-10 justify-evenly bg-white">
                         {datac.map((item) => (
                             <div className="flex flex-wrap justify-evenly shadow-2xl w-[270px]">
                                 <div className="flex flex-col  align-baseline h-[370px]  w-[97%] rounded overflow-hidden justify-between mb-">

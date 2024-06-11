@@ -120,6 +120,16 @@ const API = {
         return await fetch(ApiBase + '/sales_report/' + userid);
     },
 
+    orderReport: async (userid: String) => {
+        return await fetch(ApiBase + '/sales_order_report/' + userid);
+    },
+
+    updateStatus: async (userid: number, status :string) => {
+        return await fetch(ApiBase + '/updade_payment_status/' + userid + '/' + status, {
+            method: 'POST',
+        })
+    },
+
     get_roduct: async (id: string) => {
         await fetch(ApiBase + "/product/" + id, {
             method: 'GET',
